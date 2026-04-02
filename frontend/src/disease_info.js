@@ -1,0 +1,168 @@
+const diseaseInfo = {
+  "Aphid": {
+    symptoms:
+      "Small soft-bodied insects clustering on leaves, stems and heads causing yellowing, stunting, and honeydew secretion. Transmits viral diseases like yellow mosaic.",
+    cause:
+      "Infestation by aphid species (Rhopalosiphum padi, Sitobion avenae). Multiply rapidly in warm dry weather.",
+    prevention:
+      "Monitor regularly and spray when aphid numbers exceed 10-15 per tiller (Economic Threshold Level). Encourage natural predators like ladybugs and lacewings.",
+    cure:
+      "Spray Quinalphos 25% EC (1000 ml with 500 L water/ha) or Thiamethoxam 25WG (12.5g a.i./ha). Biological control: Apply Metarhizium anisopliae 15% WP (4g/l) or Verticillium lecanii 1.15% WP (4g/l)."
+  },
+
+  "Black Rust": {
+    symptoms:
+      "Dark reddish-brown to black elongated pustules on both sides of leaves, stems, and spikes. Spore masses break through surface tissue causing severe lodging.",
+    cause:
+      "Caused by Puccinia graminis f. sp. tritici fungus. Thrives in hot days (25-30°C), mild nights (15-20°C), and wet leaves from rain or dew.",
+    prevention:
+      "Grow disease-resistant varieties recommended for your region. Eliminate alternate host barberry plants. Regular field monitoring starting from booting stage.",
+    cure:
+      "Spray Tebuconazole 50% EC @ 0.1% (most effective - reduces disease by 74.92% in 14 days, increases yield by 169-185%). Alternative: Propiconazole 25% EC @ 0.1%. Mix 1ml/litre water, apply 250L/ha when disease incidence reaches 50%."
+  },
+
+  "Blast": {
+    symptoms:
+      "Diamond or eye-shaped lesions with gray centers and dark brown margins on leaves. Severe infections cause leaf withering and head blast.",
+    cause:
+      "Caused by Magnaporthe oryzae fungus. Occurs in warm humid conditions with heavy dew and nitrogen-rich soils.",
+    prevention:
+      "Avoid excessive nitrogen fertilization. Ensure proper water management and field drainage. Use resistant varieties when available.",
+    cure:
+      "Apply Tricyclazole or Azoxystrobin fungicides. Remove infected plant debris. Maintain balanced fertilization especially nitrogen levels."
+  },
+
+  "Brown Rust": {
+    symptoms:
+      "Circular brown scattered pustules appear on upper leaf surface. Small reddish-brown oval pustules randomly distributed on leaves.",
+    cause:
+      "Caused by Puccinia recondita (Puccinia triticina) fungus. Spreads in humid conditions with moderate temperatures (15-22°C).",
+    prevention:
+      "Use rust-resistant wheat varieties. Avoid excess nitrogen fertilizer. Practice crop rotation and maintain proper field sanitation.",
+    cure:
+      "Spray Propiconazole 25% EC @ 0.1% or Tebuconazole 25% EC @ 0.1%. Apply Triademefon 25 WP (Bayleton) @ 0.1%. Mix 1ml chemical in 1 litre water when weather is clear (no rain, fog or dew)."
+  },
+
+  "Common Root Rot": {
+    symptoms:
+      "Brown to black discoloration of roots and crown. Plants appear stunted with reduced tillering. Lower stem shows browning and rotting.",
+    cause:
+      "Caused by multiple fungi including Cochliobolus sativus and Fusarium species. Worsened by drought stress, poor soil drainage and poor soil conditions.",
+    prevention:
+      "Use certified disease-free seeds. Practice crop rotation with non-cereal crops like legumes. Improve soil drainage and avoid waterlogging.",
+    cure:
+      "Seed treatment with fungicides like Carboxin before planting. Maintain adequate soil fertility. Avoid planting in heavily infested fields. Apply Trichoderma-based bioagents."
+  },
+
+  "Fusarium Head Blight": {
+    symptoms:
+      "Premature bleaching of wheat heads and spikelets appear whitish or tan. Pink-orange fungal growth visible on infected heads. Produces harmful mycotoxins.",
+    cause:
+      "Caused by Fusarium graminearum and other Fusarium species. Favored by warm humid weather (25-30°C) during flowering and grain development.",
+    prevention:
+      "Use moderately resistant varieties. Practice crop rotation away from corn. Plow under crop residues. Avoid overhead irrigation during flowering.",
+    cure:
+      "Apply Tebuconazole or Prothioconazole at flowering stage. Harvest grain at proper moisture (below 14%) to reduce toxin accumulation. Remove and destroy infected crop debris."
+  },
+
+  "Healthy": {
+    symptoms:
+      "Leaf is green and healthy with no visible disease symptoms. Plant shows vigorous growth with proper tillering and development.",
+    cause:
+      "No disease detected. Result of proper crop management, favorable growing conditions, and good agricultural practices.",
+    prevention:
+      "Maintain crop rotation with non-cereal crops. Use certified disease-free seeds. Ensure balanced fertilization (NPK). Practice integrated pest management.",
+    cure:
+      "Continue regular field monitoring for early disease detection. Maintain proper irrigation management. Apply recommended doses of fertilizers at appropriate growth stages."
+  },
+
+  "Leaf Blight": {
+    symptoms:
+      "Lesion margins form on wheat leaves turning grayish, tanned and bleached over time. Sometimes entire leaf gets killed. Component of Helminthosporium leaf blight complex.",
+    cause:
+      "Caused by Pseudomonas syringae bacteria. Develops during high humidity for extended periods. Part of bacterial blight complex in Asian regions.",
+    prevention:
+      "Plant disease-resistant varieties. Ensure proper field drainage. Avoid overhead irrigation. Early diagnosis when infection chances are high.",
+    cure:
+      "Fungicides not very effective for bacterial blight. Remove and destroy infected plants immediately. Maintain proper field sanitation. Copper-based bactericides may provide some control."
+  },
+
+  "Mildew": {
+    symptoms:
+      "Light layer of white to greyish cotton-like fungus visible on leaves, stem and floral parts. Causes early leaf death and reduces grain size up to 40%.",
+    cause:
+      "Fungal infection (Blumeria graminis f. sp. tritici) occurring in mild temperature, increased humidity and high nitrogen fertilizers. Common in semi-arid areas.",
+    prevention:
+      "Use disease-resistant cultivars. Ensure proper plant spacing for air circulation. Apply balanced nitrogen fertilization. Use heavier, infrequent irrigation rather than frequent light irrigation.",
+    cure:
+      "Spray Carbendazim 0.05% on crop at 15-day intervals. Apply sulfur-based fungicides. Improve field ventilation. Reduce excessive nitrogen application."
+  },
+
+  "Mite": {
+    symptoms:
+      "Wheat curl mite causes leaf rolling, stunting and transmits wheat streak mosaic virus. Leaves show discontinuous streaking and yellowing. Plants become stunted with mottled appearance.",
+    cause:
+      "Caused by wheat curl mite (Aceria tosichella). Very small mites invisible to naked eye. Major vector for wheat streak mosaic virus. Favored by dry conditions.",
+    prevention:
+      "Remove and burn volunteer wheat plants before sowing. Eliminate annual and perennial grassy weeds regularly. Delay planting to avoid early mite colonization. Maintain weed-free period (3 weeks) before sowing.",
+    cure:
+      "Apply miticides in winter when conditions are favorable. Use insecticides to reduce mite populations. Plant varieties resistant to wheat streak mosaic virus. Control grassy weeds that serve as alternate hosts."
+  },
+
+  "Septoria": {
+    symptoms:
+      "Small brown lesions with yellow margins on leaves. Lesions may coalesce causing large necrotic areas and early leaf senescence. Pycnidia visible as black dots.",
+    cause:
+      "Caused by Septoria tritici fungus. Favored by wet weather, high humidity and moderate temperatures (15-25°C). Associated with reduced tillage systems.",
+    prevention:
+      "Use resistant wheat cultivars. Practice crop rotation. Remove infected plant debris. Ensure adequate plant spacing for air circulation.",
+    cure:
+      "Apply Propiconazole or Azoxystrobin fungicides at first symptom appearance. Repeat spray if needed based on disease pressure. Remove crop stubble after harvest."
+  },
+
+  "Smut": {
+    symptoms:
+      "Grains filled with black spores (teliospores). Kernels become dull grey-brown known as bunt balls. Entire inflorescence appears as mass of olive-black spores with fishy smell.",
+    cause:
+      "Caused by Tilletia foetida, T. caries (Common Bunt) and Ustilago tritici (Loose Smut) fungi. Grows on seed surface and soil, infecting during germination in cold wet conditions.",
+    prevention:
+      "Use certified fungi-tested seeds. Clean seeds properly with seed conditioner. Plant when temperature is warm and unfavorable for fungi. Avoid using previous crop residues.",
+    cure:
+      "Seed treatment: Carboxin 75 WP (2.5 gm/kg seed) or Carbendazim 50 WP (2.5 gm/kg seed) or Tebuconazole 2DS (1.25 gm/kg seed). Eco-friendly: Carboxin 1.25 gm/kg + Trichoderma viride 4 gm/kg (apply T. viride 72 hrs before sowing, fungicide 24 hrs before)."
+  },
+
+  "Stem fly": {
+    symptoms:
+      "Larvae bore into wheat stems causing dead hearts in young plants. Central shoot withers and dies while outer leaves remain green. Severely reduces tillering.",
+    cause:
+      "Caused by wheat stem fly larvae (Meromyza species). Adult flies lay eggs on young wheat plants. Favored by very early sowing of crop.",
+    prevention:
+      "Avoid very early sowing of wheat. Use recommended sowing dates for your region. Deep plowing after harvest to destroy pupae in soil. Use healthy certified seeds.",
+    cure:
+      "Apply Chlorpyrifos or Quinalphos insecticides when infestation is detected. Remove and destroy infested plants. Practice crop rotation with non-cereal crops."
+  },
+
+  "Tan spot": {
+    symptoms:
+      "Oval or diamond-shaped brown leaf spots darker in middle with yellow periphery giving characteristic 'eye spot' appearance. Large dead tissue areas develop as disease progresses.",
+    cause:
+      "Caused by Pyrenophora tritici-repentis fungus. Associated with reduced tillage and conservation agriculture. Often occurs with leaf rust and septoria leaf blotch.",
+    prevention:
+      "Practice crop rotation minimum one year out of wheat. Use tan spot resistant varieties. Avoid reduced tillage systems where disease is prevalent. Remove crop debris and stubble.",
+    cure:
+      "Apply foliar fungicide when high disease risk in flag leaf. Propiconazole or Tebuconazole at first symptom appearance. Proper residue management is critical for long-term control."
+  },
+
+  "Yellow Rust": {
+    symptoms:
+      "Yellowish-orange pustules develop on leaves in parallel striped patterns along leaf veins. Tissues appear dry and brown with burning-like appearance. Leaves dry early.",
+    cause:
+      "Caused by Puccinia striiformis f. sp. tritici fungus. Occurs in cold temperatures (10-16°C) with high moisture. Favored by cold winters and mild wet springs.",
+    prevention:
+      "Grow resistant varieties (H.P.W-360, 368, 349, H.S.-562, H.S.-542). Avoid monoculture of single variety. Control grassy weeds three weeks before seedling. Regular field inspection for early detection.",
+    cure:
+      "Spray Propiconazole 25 EC @ 0.1% or Tebuconazole 25 EC (Folicur) @ 0.1%. Alternative: Tebuconazole 50% + Trifloxystrobin 25% WG @ 0.06% at foci of infection. Spray Mancozeb 75 W.P. @ 0.2% at 15-day intervals. Apply when weather is clear (no rain, fog or dew)."
+  }
+};
+
+export default diseaseInfo;

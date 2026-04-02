@@ -1,0 +1,9 @@
+tensorflow
+numpy<2
+opencv-python
+matplotlib
+pillow
+kagglehub
+fastapi
+uvicorn
+pymongo
